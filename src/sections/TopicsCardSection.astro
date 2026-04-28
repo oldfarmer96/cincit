@@ -1,0 +1,150 @@
+---
+const topicCards = [
+  {
+    img: "/ia.webp",
+    content:
+      "Conoce cómo las máquinas aprenden, entienden el lenguaje humano y actúan de manera inteligente, y los aspectos éticos relacionados.",
+    title: "Inteligencia Artificial",
+  },
+  {
+    img: "/data.webp",
+    content:
+      "Explora cómo la Ciencia de Datos transforma grandes volúmenes de información en conocimiento valioso para la toma de decisiones estratégicas.",
+    title: "Ciencia de Datos",
+  },
+  {
+    img: "/cyber.webp",
+    content:
+      "Aprende a proteger sistemas y datos en un mundo interconectado, defendiéndote de las amenazas digitales y garantizando la integridad de la información.",
+    title: "Ciberseguridad",
+  },
+  {
+    img: "/robotica.webp",
+    content:
+      "Descubre el futuro de la automatización y la interacción hombre-máquina, desde la programación de sistemas autónomos hasta sus aplicaciones industriales.",
+    title: "Robótica",
+  },
+  {
+    img: "/software.webp",
+    content:
+      "Domina el ciclo de vida del desarrollo y las arquitecturas distribuidas, como Microfrontends, para crear soluciones de software escalables y robustas.",
+    title: "Ingeniería de Software",
+  },
+  {
+    img: "/powerbi.webp",
+    content:
+      "Utiliza Power BI para el análisis de datos y la inteligencia artificial, impulsando la competitividad y la toma de decisiones en la era digital.",
+    title: "Power BI y Analítica",
+  },
+  {
+    img: "/gestion.webp",
+    content:
+      "Aprende a liderar equipos y administrar recursos de forma eficiente, utilizando la IA para optimizar la planificación y ejecución de proyectos tecnológicos.",
+    title: "Gestión de Proyectos con IA",
+  },
+  {
+    img: "/networking.webp",
+    content:
+      "Descubre cómo las oportunidades de networking y un posgrado en el extranjero pueden transformar y acelerar tu carrera profesional en tecnología.",
+    title: "Networking y Carrera",
+  },
+];
+---
+
+<section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        <span class="text-white/80">Temáticas actuales en </span>
+        <span class="text-gradient">Sistemas</span>
+        <span class="text-white/80">e</span>
+        <span class="text-gradient"> IA </span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        topicCards.map((card) => (
+          <div class="card-container">
+            <div class="card rounded-2xl p-6 h-80 relative overflow-hidden">
+              <div class="group card-content h-full flex flex-col justify-center items-center relative">
+                <img
+                  src={card.img}
+                  alt={card.title}
+                  class="card-image w-24 h-24 lg:w-32 lg:h-32 group-hover:w-14 group-hover:h-14 lg:group-hover:w-20 lg:group-hover:h-20 rounded-full object-cover absolute top-4 left-1/2 transform -translate-x-1/2"
+                />
+
+                <h3 class="card-title text-lg font-bold text-gray-400 text-center absolute">
+                  {card.title}
+                </h3>
+
+                <p class="card-text text-sm lg:text-base text-white/70 text-center absolute bottom-4 left-4 right-4 leading-relaxed">
+                  {card.content}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style scoped>
+  .card-container {
+    perspective: 1000px;
+  }
+
+  .card {
+    /* backdrop-filter: blur(20px); */
+    /* background: rgba(255, 255, 255, 0.1); */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .card:hover {
+    backdrop-filter: blur(0px);
+    background: rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-image {
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    /* opacity: 0; */
+    transform: translateY(20px) scale(1.1);
+  }
+
+  .card:hover .card-image {
+    /* opacity: 1; */
+    transform: translateY(-10px) scale(1.2); /* img size hover */
+  }
+
+  .card-title {
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(80px);
+  }
+
+  .card:hover .card-title {
+    transform: translateY(0px);
+  }
+
+  .card-text {
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .card:hover .card-text {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  .card-content {
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .card:hover .card-content {
+    backdrop-filter: none;
+  }
+</style>

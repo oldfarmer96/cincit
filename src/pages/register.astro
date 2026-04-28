@@ -1,0 +1,28 @@
+---
+import Container from "@/components/ui/Container.astro";
+import Layout from "@/layouts/Layout.astro";
+import Inscription from "@/components/Inscription.astro";
+---
+
+<Layout title="Inscripciones | CINCIT 2025">
+  <Container>
+    <div class="grid grid-cols-1 lg:grid-cols-1 gap-3 lg:gap-6">
+      <Inscription />
+      <!-- <VerificationForm client:idle /> -->
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  @keyframes slow-ping {
+    75%,
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+
+  .animate-slow-ping {
+    animation: slow-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+</style>

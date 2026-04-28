@@ -1,0 +1,103 @@
+---
+interface Props {
+  text?: string;
+  initialDelay?: number;
+  letterAnimationDuration?: number;
+  letterInterval?: number;
+}
+
+const {
+  text = "CINCIT 2025",
+  initialDelay = 350,
+  letterAnimationDuration = 500,
+  letterInterval = 100,
+} = Astro.props;
+---
+
+<div
+  id="matrix-container"
+  class="matrix-container"
+  data-text={text}
+  data-initial-delay={initialDelay}
+  data-letter-animation-duration={letterAnimationDuration}
+  data-letter-interval={letterInterval}
+>
+  {text.split('').map(char => (
+    <span class="letter">
+      {char === ' ' ? <Fragment set:html="&nbsp;" /> : char}
+    </span>
+  ))}
+</div>
+
+<script>
+  const container = document.getElementById("matrix-container");
+
+  if (container) {
+    const props = {
+      text: container.dataset.text || "CINCIT 2025",
+      initialDelay: parseInt(container.dataset.initialDelay || "350", 10),
+      letterAnimationDuration: parseInt(container.dataset.letterAnimationDuration || "500", 10),
+      letterInterval: parseInt(container.dataset.letterInterval || "100", 10),
+    };
+
+    const letters = container.querySelectorAll(".letter");
+
+    const getRandomChar = (): string => (Math.random() > 0.5 ? "1" : "0");
+
+    const animateLetter = (index: number) => {
+      if (index >= letters.length) return;
+
+      const letterSpan = letters[index] as HTMLElement;
+      
+      if (props.text[index] === ' ') {
+        return; 
+      }
+
+      letterSpan.innerHTML = getRandomChar();
+      letterSpan.classList.add("matrix-active");
+
+      setTimeout(() => {
+        letterSpan.innerHTML = props.text[index];
+        letterSpan.classList.remove("matrix-active");
+      }, props.letterAnimationDuration);
+    };
+
+    const startAnimation = () => {
+      let currentIndex = 0;
+      const animate = () => {
+        if (currentIndex >= props.text.length) {
+          return;
+        }
+        animateLetter(currentIndex);
+        currentIndex++;
+        setTimeout(animate, props.letterInterval);
+      };
+      animate();
+    };
+
+    setTimeout(startAnimation, props.initialDelay);
+  }
+</script>
+
+<style>
+  .matrix-container {
+    display: inline-block;
+    background: linear-gradient(to right, #3b82f6, #0891b2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    font-weight: bold;
+  }
+
+  .letter {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+  }
+
+  .matrix-active {
+    color: #155dfc;
+    text-shadow: 0 2px 4px rgba(21, 93, 252, 0.5);
+  }
+</style>

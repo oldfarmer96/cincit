@@ -1,0 +1,14 @@
+---
+import AboutHero from "@/components/AboutHero.astro";
+import AboutMissionVision from "@/components/AboutMissionVision.astro";
+import ExperienceCincit from "@/components/ExperienceCincit.astro";
+import GalleryEditions from "@/components/GalleryEditions.vue";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <AboutHero />
+  <AboutMissionVision />
+  <ExperienceCincit />
+  <GalleryEditions client:visible />
+</Layout>

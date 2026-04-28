@@ -1,0 +1,233 @@
+---
+import Container from "./ui/Container.astro";
+
+const sponsors = [
+  {
+    name: "reytec",
+    logo: "/sponsor/REYTEC.webp",
+    url: "https://www.facebook.com/Reytec.Internet/",
+  },
+  {
+    name: "Real Chancas",
+    logo: "/sponsor/RealChankas.webp",
+    url: "https://www.facebook.com/profile.php?id=100037499116120",
+  },
+  {
+    name: "PRINTCOLOR",
+    logo: "/sponsor/PRINTCOLOR.webp",
+    url: "https://www.facebook.com/profile.php?id=61580221235958",
+  },
+  {
+    name: "SETELNETV",
+    logo: "/sponsor/stelnetv.webp",
+    url: "https://www.facebook.com/profile.php?id=61577831677640",
+  },
+  {
+    name: "arios",
+    logo: "/sponsor/ARIOS.webp",
+    url: "https://www.facebook.com/profile.php?id=100047643619630&_rdc=1&_rdr#",
+  },
+  {
+    name: "capci",
+    logo: "/sponsor/capci.webp",
+    url: "https://www.facebook.com/capciinstitutodeformaciontecnica",
+  },
+  {
+    name: "WASIMIEL",
+    logo: "/sponsor/WASIMIEL.webp",
+    url: "https://www.facebook.com/p/Wasi-Miel-Andahuaylas-100054581928707/",
+  },
+  {
+    name: "NAYRO",
+    logo: "/sponsor/NAYRO.webp",
+    url: "https://www.facebook.com/guizadoexpress",
+  },
+  {
+    name: "WALLE",
+    logo: "/sponsor/walle.webp",
+    url: "https://www.facebook.com/Onestoreandahuaylas?locale=es_LA",
+  },
+  {
+    name: "Lancenter",
+    logo: "/sponsor/lancenter.webp",
+    url: "#",
+  },
+  {
+    name: "municipalidad-de-talvera",
+    logo: "/sponsor/munitalavera.webp",
+    url: "https://www.munitalavera.gob.pe/",
+  },
+];
+
+const splitIndex = Math.ceil(sponsors.length / 2);
+const sponsorsRow1 = sponsors.slice(0, splitIndex);
+const sponsorsRow2 = sponsors.slice(splitIndex);
+---
+
+<Container>
+  <div class="text-center mb-16 animate-fade-in-up">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+      <span class="text-white/80">Nuestros </span>
+      <span class="text-gradient">auspiciadores</span>
+    </h2>
+  </div>
+
+  <div class="slider-container mb-2">
+    <div class="slider-track">
+      {
+        sponsorsRow1.map((sponsor) => (
+          <a
+            href={sponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="sponsor-item"
+          >
+            <img src={sponsor.logo} alt={sponsor.name} loading="lazy" />
+          </a>
+        ))
+      }
+      {
+        sponsorsRow1.map((sponsor) => (
+          <a
+            href={sponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="sponsor-item"
+          >
+            <img src={sponsor.logo} alt={sponsor.name} loading="lazy" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="slider-container mb-10">
+    <div class="slider-track-reverse">
+      {
+        sponsorsRow2.map((sponsor) => (
+          <a
+            href={sponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="sponsor-item"
+          >
+            <img src={sponsor.logo} alt={sponsor.name} loading="lazy" />
+          </a>
+        ))
+      }
+      {
+        sponsorsRow2.map((sponsor) => (
+          <a
+            href={sponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="sponsor-item"
+          >
+            <img src={sponsor.logo} alt={sponsor.name} loading="lazy" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Container>
+<style>
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 0.1rem 0;
+    position: relative;
+  }
+
+  .slider-container::before,
+  .slider-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .slider-track {
+    display: flex;
+    gap: 4rem;
+    animation: scroll 40s linear infinite;
+    width: fit-content;
+  }
+
+  .slider-track:hover {
+    animation-play-state: paused;
+  }
+
+  .slider-track-reverse {
+    display: flex;
+    gap: 4rem;
+    animation: scroll-reverse 40s linear infinite;
+    width: fit-content;
+  }
+
+  .slider-track-reverse:hover {
+    animation-play-state: paused;
+  }
+
+  .sponsor-item {
+    flex-shrink: 0;
+    width: 180px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
+    filter: grayscale(100%) opacity(0.7);
+  }
+
+  .sponsor-item:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%) opacity(1);
+  }
+
+  .sponsor-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    will-change: transform;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-reverse {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slider-track {
+      gap: 2rem;
+      animation-duration: 30s;
+    }
+
+    .slider-track-reverse {
+      gap: 2rem;
+      animation-duration: 30s;
+    }
+
+    .sponsor-item {
+      width: 120px;
+      height: 70px;
+    }
+  }
+</style>

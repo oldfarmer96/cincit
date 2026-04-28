@@ -1,0 +1,132 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/ui/Container.astro";
+
+const email = Astro.locals.email as string | undefined;
+
+if (!email) {
+  return Astro.redirect("/register");
+}
+---
+
+<Layout title="Completar Registro">
+  <Container>
+    <div>
+      <div class="text-center pt-10 px-4">
+        <h2 class="text-2xl md:text-3xl text-white/80 font-bold">
+          Formulario de <span class="text-gradient">registro</span>
+        </h2>
+
+        <div class="max-w-2xl mx-auto my-6 p-4 rounded-lg bg-gradient-card">
+          <div class="rounded-lg p-4">
+            <ul class="space-y-3 text-gray-200 text-sm">
+              <li class="flex items-start gap-3 text-left">
+                <svg
+                  class="w-5 h-5 text-blue-400 flex-shrink-0 mt-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>
+                  Ingresa tu DNI y presiona 'Buscar' para
+                  <strong>autocompletar tus datos</strong>.
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3 text-left">
+                <svg
+                  class="w-5 h-5 text-blue-400 flex-shrink-0 mt-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>
+                  Asegúrate que todos tus datos sean
+                  <strong>reales y correctos</strong> antes de enviar.
+                </span>
+              </li>
+
+              <li class="gap-3 text-left flex items-start">
+                <svg
+                  class="w-5 h-5 text-blue-400 flex-shrink-0 mt-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span
+                  >La información registrada será utilizada para la
+                  certificación y <strong
+                    >no podrás modificarla posteriormente</strong
+                  >.</span
+                >
+              </li>
+
+              <li class="flex items-start gap-3 text-left">
+                <svg
+                  class="w-5 h-5 text-blue-400 flex-shrink-0 mt-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>
+                  Verifica tu número de <strong>celular</strong>. Será utilizado
+                  para agregarte al grupo oficial de WhatsApp del <strong
+                    >CINCIT 2025</strong
+                  >.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <RegistrationForm email={email} client:load /> -->
+
+    <!-- <AbortRegistration /> -->
+  </Container>
+</Layout>
+
+<style>
+  @keyframes gradient-x {
+    0%,
+    100% {
+      background-size: 200% 200%;
+      background-position: left center;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: right center;
+    }
+  }
+
+  .animated-border {
+    padding: 5px;
+    background-image: linear-gradient(to right, #e41405, #db8686, #e20505);
+    animation: gradient-x 3s ease-in-out infinite;
+  }
+</style>

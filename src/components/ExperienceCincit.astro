@@ -1,0 +1,53 @@
+---
+import { Presentation, Laptop, Users } from "@lucide/astro";
+
+const experiences = [
+  {
+    icon: Presentation,
+    title: "Ponencias Magistrales",
+    description:
+      "Tres días de conferencias con líderes de la industria que comparten sus conocimientos sobre las últimas tendencias en IA, desarrollo de software, ciberseguridad y más.",
+  },
+  {
+    icon: Laptop,
+    title: "Talleres Prácticos",
+    description:
+      "Por las tardes, sumérgete en talleres donde podrás aplicar lo aprendido, desarrollar proyectos y adquirir habilidades técnicas directamente de profesionales.",
+  },
+  {
+    icon: Users,
+    title: "Networking y Comunidad",
+    description:
+      "CINCIT no es solo aprender, es conectar. Conoce a otros estudiantes, ponentes y empresas. ¡La próxima gran idea o tu futuro empleo podría empezar aquí!",
+  },
+];
+---
+
+<section class="py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold">
+        <span class="text-gradient">Vive la Experiencia CINCIT</span>
+      </h2>
+      <p class="mt-4 text-lg text-white/70 max-w-2xl mx-auto">
+        Nuestro evento está diseñado en tres pilares fundamentales para
+        maximizar tu aprendizaje y crecimiento profesional.
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      {
+        experiences.map((exp) => (
+          <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/40 border border-slate-700 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 cursor-default">
+            <div class="bg-primary/10 p-5 rounded-full inline-flex mb-6 ring-8 text-white/5">
+              <exp.icon class="h-10 w-10 text-white/60" />
+            </div>
+
+            <h3 class="text-2xl font-bold text-white/90 mb-3">{exp.title}</h3>
+            <p class="text-white/70 leading-relaxed">{exp.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

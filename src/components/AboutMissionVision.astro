@@ -1,0 +1,47 @@
+---
+import { Goal, Eye } from "@lucide/astro";
+
+const cards = [
+  {
+    icon: Goal,
+    title: "Nuestra Misión",
+    description:
+      "Crear un puente entre el conocimiento académico y las últimas tendencias de la industria, brindando a los estudiantes una plataforma para aprender de expertos, desarrollar habilidades prácticas y conectar con profesionales del sector.",
+  },
+  {
+    icon: Eye,
+    title: "Nuestra Visión",
+    description:
+      "Aspiramos a consolidar a CINCIT como el congreso de tecnología más influyente del sur del Perú, convirtiendo nuestra universidad en un epicentro de innovación y talento que inspire a las futuras generaciones.",
+  },
+];
+---
+
+<section class="py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold">
+        <span class="text-gradient">Nuestro Propósito</span>
+      </h2>
+      <p class="mt-4 text-lg text-white/70 max-w-2xl mx-auto">
+        Más que un evento, CINCIT es un movimiento impulsado por la pasión por
+        la tecnología y el futuro de nuestra comunidad.
+      </p>
+    </div> -->
+
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        cards.map((card) => (
+          <div class="group relative p-8 rounded-2xl bg-slate-800/40 border border-slate-700 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 cursor-default">
+            <div class="bg-primary/10 p-4 rounded-xl inline-flex mb-6">
+              <card.icon class="h-8 w-8 text-white/70" />
+            </div>
+
+            <h3 class="text-2xl font-bold text-white/90 mb-3">{card.title}</h3>
+            <p class="text-white/70 leading-relaxed">{card.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

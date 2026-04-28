@@ -1,0 +1,37 @@
+---
+import Container from "@/components/ui/Container.astro";
+---
+
+<Container>
+  <div class="text-center mb-16 animate-fade-in-up">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+      <span class="text-white/80">Ubicación</span>
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 mb-10">
+    <div class="max-w-lg h-80">
+      <iframe
+        class="w-full h-full rounded-2xl"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1938.4470076752013!2d-73.348931!3d-13.664208!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916d29f061fc8823%3A0x81785c36cb372aa2!2sAuditorio%20Central%20-%20UNAJMA!5e0!3m2!1ses-419!2spe!4v1761706313288!5m2!1ses-419!2spe"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="p-8">
+      <!-- <h2 class="text-3xl font-bold text-blue-500">CINCIT</h2>
+
+      <p class="text-lg text-gray-400 mt-1 mb-6">
+        Congreso Internacional de Computación e Innovación Tecnológica.
+      </p> -->
+
+      <h3 class="text-2xl font-semibold text-gradient">Ubicación del Evento</h3>
+
+      <span class="block text-gray-300 mt-2 mb-4">
+        Auditorio Central de la Universidad Nacional José María Arguedas,
+        Andahuaylas.
+      </span>
+    </div>
+  </div>
+</Container>

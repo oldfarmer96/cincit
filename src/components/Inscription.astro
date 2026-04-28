@@ -1,0 +1,162 @@
+---
+import PaymentModal from "./PaymentModal.astro";
+---
+
+<div class="text-center lg:mb-4">
+  <h2 class="text-3xl md:text-5xl mb-4 text-gradient font-bold mt-6">
+    INSCRIPCIONES
+  </h2>
+  <!-- <div class="my-3">
+    <div class="relative inline-flex">
+      <span
+        class="text-sm text-white/60 font-semibold bg-blue-700/60 px-2 py-1 rounded-lg relative z-10"
+        >VI CINCIT 2025</span
+      >
+      <span class="flex absolute h-full w-full top-0 left-0">
+        <span
+          class="animate-slow-ping absolute inline-flex h-full w-full rounded-lg bg-blue-400 opacity-75"
+        ></span>
+      </span>
+    </div>
+  </div> -->
+  <p class="text-white/70 text-lg">
+    Sé parte de la sexta edición del Congreso Internacional de Computación e
+    Innovación Tecnológica
+  </p>
+
+  <!-- <div class="my-12 max-w-lg mx-auto">
+    <div
+      class="h-px bg-blue-500/30 shadow-[0_0_8px_theme(colors.blue.500/0.3)]"
+    >
+    </div>
+  </div> -->
+
+  <div
+    class="max-w-lg mt-3 mx-auto bg-slate-900/50 border border-blue-800/40 rounded-2xl p-6 md:p-8 text-white shadow-lg shadow-blue-900/20"
+  >
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between">
+      <div>
+        <h3 class="text-lg font-semibold text-white/80">Inscripción General</h3>
+        <p class="text-4xl md:text-5xl font-bold text-white mt-1">S/ 50.00</p>
+      </div>
+      <div class="mt-4 md:mt-0">
+        <button
+          id="open-payment-modal"
+          type="button"
+          class="w-full md:w-auto py-2 px-5 rounded-lg bg-blue-800 text-white/90 cursor-pointer hover:bg-blue-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-default"
+        >
+          Ver Métodos de Pago
+        </button>
+      </div>
+    </div>
+    <p class="text-white/70 mt-4 text-left">
+      La experiencia completa para todo público.
+    </p>
+
+    <ul class="mt-6 space-y-3">
+      <li class="flex items-center gap-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-blue-400 flex-shrink-0"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+          ></path>
+        </svg>
+        <span class="text-white/80">Certificado</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-blue-400 flex-shrink-0"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 012-2h4a2 2 0 012 2v1m-4 0h4"
+          ></path>
+        </svg>
+        <span class="text-white/80">Carnet de Identificación</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-blue-400 flex-shrink-0"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2H5z"
+          ></path>
+        </svg>
+        <span class="text-white/80">Acceso a todas las ponencias</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-blue-400 flex-shrink-0"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.31A2 2 0 0 1 20.73 22H3.27a2 2 0 0 1-1.55-3.69L4 16"
+          ></path>
+        </svg>
+        <span class="text-white/80">Participación en talleres</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-blue-400 flex-shrink-0"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+          <path d="M4.5 22H19.5"></path>
+          <path d="M12 17V2.5"></path>
+          <path
+            d="M12 17H6.5a4.5 4.5 0 0 0-4.5 4.5v0A.5.5 0 0 0 3 22h18a.5.5 0 0 0 .5-.5v0a4.5 4.5 0 0 0-4.5-4.5H12Z"
+          ></path>
+        </svg>
+        <span class="text-white/80">Participación en concursos</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="my-5">
+    <p class="text-white/70 text-sm my-3 italic">
+      Para mayor Información comunicarse con:
+
+      <a
+        href="https://wa.link/r1nr8u"
+        target="_blank"
+        class="text-blue-500 underline font-bold">+51 982972208</a
+      >
+    </p>
+  </div>
+</div>
+
+<PaymentModal />

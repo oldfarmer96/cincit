@@ -1,0 +1,21 @@
+---
+import ComingSoon from "@/components/ComingSoon.astro";
+import ScheduleTimeline from "@/components/ScheduleTimeline.vue";
+import Layout from "@/layouts/Layout.astro";
+
+const show = true;
+---
+
+<Layout
+  title="Cronograma del Evento - CINCIT 2025"
+  description="Consulta el cronograma completo de ponencias, talleres y actividades del CINCIT 2025, del 10 al 13 de noviembre."
+>
+  <section class="text-center my-4">
+    <h1 class="text-4xl md:text-6xl font-bold animate-fade-in-up text-white/80">
+      Cronograma del
+      <span class="text-gradient">Evento</span>
+    </h1>
+  </section>
+
+  {show ? <ScheduleTimeline client:load /> : <ComingSoon />}
+</Layout>

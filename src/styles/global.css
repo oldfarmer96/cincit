@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+* {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* nuevps START  */
+  /* Colores base */
+  --background: oklch(0.2077 0.0398 265.7549);
+  --foreground: oklch(0.9288 0.0126 255.5078);
+  --muted-foreground: oklch(0.7137 0.0192 261.3246);
+  --border: oklch(0.4461 0.0263 256.8018);
+
+  /* Degradados para fondos y texto */
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(220 100% 65%) 0%,
+    hsl(200 100% 60%) 100%
+  );
+  --gradient-card: linear-gradient(
+    135deg,
+    hsl(220 25% 10% / 0.8) 0%,
+    hsl(220 20% 15% / 0.9) 100%
+  );
+
+  /* Efectos de brillo (glow) */
+  --glow-primary: 0 0 40px hsl(220 100% 65% / 0.3);
+
+  /* Transiciones */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* nuevps END  */
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(220 100% 65%) 0%,
+    hsl(200, 50%, 41%) 100% /* hsl(200, 54%, 45%) 100% */
+  );
+
+  --gradient-secondary: linear-gradient(
+    135deg,
+    hsl(240, 75%, 69%) 0%,
+    hsl(220, 66%, 44%) 100% /* hsl(220, 68%, 52%) 100% */
+  );
+
+  --gradient-card: linear-gradient(
+    135deg,
+    hsl(220 25% 10% / 0.8) 0%,
+    hsl(220 20% 15% / 0.9) 100%
+  );
+}
+
+@layer components {
+  /* nuevos START */
+  /* Efecto Glassmorphism para las tarjetas del contador */
+  .glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(221, 39%, 34%, 0.3);
+  }
+
+  /* Efecto de texto con degradado */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Efecto de brillo al pasar el mouse */
+  .hover-glow {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--glow-primary);
+    transform: translateY(-2px);
+  }
+  /* nuevos END */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  .animate-fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+}
+
+/* @layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+} */
+
+/* animaciones */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(220 100% 65% / 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px hsl(220 100% 65% / 0.6);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

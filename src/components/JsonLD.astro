@@ -1,0 +1,33 @@
+---
+const eventData = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "CINCIT 2025 - VI Congreso Internacional de Computación e Innovación Tecnológica",
+  startDate: "2025-11-10",
+  endDate: "2025-11-13",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  location: {
+    "@type": "Place",
+    name: "Universidad Nacional José María Arguedas",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Av. Universitaria s/n",
+      addressLocality: "Andahuaylas",
+      postalCode: "03701",
+      addressRegion: "Apurímac",
+      addressCountry: "PE",
+    },
+  },
+  image: ["https://cincit.com/portada-cincit.png"],
+  description:
+    "El evento anual más importante de computación e innovación tecnológica organizado por la Escuela Profesional de Ingeniería de Sistemas de la UNAJMA.",
+  organizer: {
+    "@type": "Organization",
+    name: "Escuela Profesional de Ingeniería de Sistemas - UNAJMA",
+    url: "https://unajma.edu.pe",
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(eventData)} />
