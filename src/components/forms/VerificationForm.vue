@@ -65,7 +65,7 @@ const onOtpSubmit = async () => {
     }
 
     localStorage.removeItem(STORAGE_KEY);
-    window.location.href = "/complete-register";
+    window.location.href = "/completar-registro";
   } catch (err: any) {
     error.value = err.message;
   } finally {
