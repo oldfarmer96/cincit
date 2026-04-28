@@ -9,12 +9,18 @@
 `npm run build` executes `astro check && astro build`. Type errors will block the build.
 
 ## Architecture
-- **Astro SSR** with Node.js adapter (`output: "server"`)
+- **Astro SSR** with Vercel adapter (`output: "server"`)
 - **Vue** components integrated; use `client:idle` directive (see `Layout.astro:69`)
 - **Tailwind CSS v4** via `@tailwindcss/vite` plugin (no tailwind.config)
 - API routes in `src/pages/api/` proxy to `NEXT_PUBLIC_API_URL`
 - Auth: JWT via `jose` library; middleware at `src/middleware.ts` protects `/complete-register`
 - Path alias: `@/*` maps to `./src/*`
+
+## Deployment
+- Deploys to **Vercel** (serverless functions)
+- Build command: `npm run build`
+- Environment variables configured in Vercel dashboard (not `.env` for secrets)
+- `@astrojs/vercel` adapter handles serverless deployment
 
 ## Environment Variables
 Defined in `astro.config.mjs` using `envField`. Required vars:

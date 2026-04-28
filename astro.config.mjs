@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 import vue from "@astrojs/vue";
 
-import node from "@astrojs/node";
+import vercel from "@astrojs/vercel";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -48,11 +48,5 @@ export default defineConfig({
     },
   },
 
-  adapter: node({
-    mode: "standalone",
-  }),
-  server: {
-    host: true,
-    port: 5000,
-  },
+  adapter: vercel(),
 });
