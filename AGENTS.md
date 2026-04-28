@@ -13,7 +13,13 @@
 - **Vue** components integrated; use `client:idle` directive (see `Layout.astro:69`)
 - **Tailwind CSS v4** via `@tailwindcss/vite` plugin (no tailwind.config)
 - API routes in `src/pages/api/` proxy to `NEXT_PUBLIC_API_URL`
-- Auth: JWT via `jose` library; middleware at `src/middleware.ts` protects `/complete-register`
+## Routes (Spanish)
+- `/` — Inicio
+- `/ponencias` — Schedule/agenda
+- `/nosotros` — About
+- `/inscripcion` — Registro
+- `/completar-registro` — Complete registration (protected)
+- API routes: `/api/send-otp`, `/api/verify-otp`, `/api/register-user`, `/api/user/[dni]`
 - Path alias: `@/*` maps to `./src/*`
 
 ## Deployment
