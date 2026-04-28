@@ -17,10 +17,22 @@ import { ref, onMounted, onUnmounted } from "vue";
 const galleryData = [
   {
     year: "2025",
-    title: "Próxima Edición",
-    description:
-      "La planificación para la próxima edición de CINCIT está en marcha.",
+    title: "",
+    description: "",
     images: [
+      "/2025/1.webp",
+      "/2025/2.webp",
+      "/2025/3.webp",
+      "/2025/4.webp",
+      "/2025/5.webp",
+      "/2025/6.webp",
+      "/2025/7.webp",
+      "/2025/8.webp",
+      "/2025/9.webp",
+      "/2025/10.webp",
+      "/2025/11.webp",
+      "/2025/12.webp",
+      "/2025/13.webp",
       "/2025/foto1.webp",
       "/2025/foto2.webp",
       "/2025/foto3.webp",

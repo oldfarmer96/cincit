@@ -1,5 +1,5 @@
 ---
-import EventCountdown from "@/components/EventCountdown.vue";
+import EventFinished from "@/components/EventFinished.astro";
 import SocialIcons from "@/components/SocialIcons.astro";
 import Colorizer from "@/components/ui/Colorizer.astro";
 import Container from "@/components/ui/Container.astro";
@@ -80,7 +80,7 @@ import { Info, Map } from "@lucide/astro";
           <span class="font-medium">del 10 al 13 de noviembre del 2025</span>
         </div>
 
-        <EventCountdown client:visible />
+        <EventFinished />
 
         <div
           class="flex flex-wrap justify-center lg:justify-start gap-2 text-sm text-muted-foreground my-4"
