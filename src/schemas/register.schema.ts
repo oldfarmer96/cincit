@@ -14,17 +14,17 @@ export const registerUserSchema = z.object({
   lastName: z.string().min(1, "El apellido es requerido."),
   institution: z.string().min(1, "La institución es requerida."),
   dni: z.string().regex(/^\d{8}$/, "El DNI debe tener 8 dígitos."),
-  email: z.string().email("Correo electrónico no válido."),
+  email: z.string(),
   telephone: z.string().regex(/^\d{9}$/, "El teléfono debe tener 9 dígitos."),
   voucher: z
     .instanceof(File, { message: "El voucher es requerido." })
     .refine((file) => file.size > 0, "El voucher no puede estar vacío.")
     .refine(
       (file) => file.size <= MAX_FILE_SIZE_BYTES,
-      `El tamaño máximo del archivo es de ${MAX_FILE_SIZE_MB}MB.`
+      `El tamaño máximo del archivo es de ${MAX_FILE_SIZE_MB}MB.`,
     )
     .refine(
       (file) => ACCEPTED_IMAGE_TYPES.includes(file.type),
-      "Solo se permiten formatos .jpeg, .jpg, .png y .webp."
+      "Solo se permiten formatos .jpeg, .jpg, .png y .webp.",
     ),
 });

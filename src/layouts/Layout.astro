@@ -20,7 +20,7 @@ const {
 
 const image = new URL(
   Astro.props.image || "/cincit-social-preview.png",
-  Astro.site
+  Astro.site,
 );
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
