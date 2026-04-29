@@ -1,4 +1,0 @@
-# Nixpacks config
-
-[phases.install]
-cmds = ["npm install"]
