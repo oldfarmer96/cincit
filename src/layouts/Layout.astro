@@ -30,7 +30,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/robot.ico" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
@@ -38,8 +37,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <link rel="icon" type="image/x-icon" href="/robot.ico" />
-    <link rel="icon" type="image/svg+xml" href="/robot.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -53,10 +52,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
-    <meta
+    <!-- <meta
       name="google-site-verification"
       content="43qxjsfE16KRUK9-HE3gbbnTy4NEzZ6aDdTiv7KVfs4"
-    />
+    /> -->
 
     <ClientRouter />
     <JsonLD />
